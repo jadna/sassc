@@ -17,7 +17,8 @@ pois_tags = {'amenity': True, 'shop': True, 'tourism': True, 'leisure': True}
 # Baixar os dados dos POIs
 logger.info("Baixando dados dos POIs...")
 try:
-    pois = ox.geometries_from_place(city, pois_tags)
+    # pois = ox.geometries_from_place(city, pois_tags)
+    pois = ox.features_from_place(city, pois_tags)
     logger.info(f"Número de POIs encontrados: {len(pois)}")
 except Exception as e:
     logger.error(f"Erro ao baixar dados dos POIs: {e}")
